@@ -1,0 +1,195 @@
+/*简单定位*/
+
+body {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+p {
+    background-color: rgb(207,232,220);
+    border: 2px solid rgb(79,185,227);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+/*相对定位:相对定位(relative positioning)让你能够把一个正常布局流
+(normal flow)中的元素从它的默认位置按坐标进行相对移动。
+✺✺✺✺✺使用top，bottom，left和right属性*/
+
+.positioned {
+  position: relative;
+  top: 30px;
+  left: 30px;
+}
+
+
+/*给中间段落的position 一个 relative值——这属性本身不做任何事情，
+所以我们还添加了top和left属性。这些可以将受影响的元素向下向右移*/
+
+.positioned {
+  position: relative;
+  background: rgba(255,84,104,.3);
+  border: 2px solid rgb(255,84,104);
+  top: 30px;
+  left: 30px;
+}
+
+/*绝对定位:绝对定位用于将元素移出正常布局流(normal flow)，
+以坐标的形式相对于它的容器定位到web页面的任何位置，
+以创建复杂的布局。有趣的是，它经常被用于与相对定位和浮动的协同工作。*/
+
+.positioned {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+/*
+这里我们给我们的中间段一个position的 absolute值，
+并且和前面一样加上 top 和left 属性。但是，添加此代码将给出以下结果：
+到第一个的顶上去了
+
+**********他们没有指定元素相对于原始位置的移动程度。
+相反，在这一案例当中，它们指定元素应该从页面边界的顶部和左边的距离(确切地说，是 <html>元素的距离)
+*/
+
+.positioned {
+    position: absolute;
+    background: rgba(255,84,104,.3);
+    border: 2px solid rgb(255,84,104);
+    top: 30px;
+    left: 30px;
+}
+
+/*固定定位:固定定位(fixed positioning)同绝对定位(absolute positioning)一样，
+将元素从文档流(document flow)当中移出了。
+但是，定位的坐标不会应用于"容器"边框来计算元素的位置，而是会应用于视口(viewport)边框。
+利用这一特性，我们可以轻松搞出一个固定位置的菜单，而不受底下的页面滚动的影响。*/
+
+.positioned1 {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+}
+
+/*粘性定位:粘性定位(sticky positioning)是最后一种我们能够使用的定位方式。
+它将默认的静态定位(static positioning)和固定定位(fixed positioning)相混合。
+当一个元素被指定了position: sticky时，它会在正常布局流中滚动，
+直到它出现在了我们给它设定的相对于容器的位置，
+这时候它就会停止随滚动移动，就像它被应用了position: fixed一样。*/
+
+.positioned1 {
+  position: sticky;
+  top: 30px;
+  left: 30px;
+}
+
+/*静态定位
+静态定位是每个元素获取的默认值——它只是意味着“将元素放入它在文档布局流中的正常位置 
+——这里没有什么特别的。*/
+
+.positioned {
+  position: static;
+  background: yellow;
+}
+
+
+/*介绍 z-index
+所有这些绝对定位很有趣，但还有另一件事我们还没有考虑到 ——当元素开始重叠，
+什么决定哪些元素出现在其他元素的顶部？ 在我们已经看到的示例中，
+我们在定位上下文中只有一个定位的元素，它出现在顶部，因为定位的元素胜过未定位的元素。*/
+
+/*♡♥❤♡♥❤z-index 值影响定位元素位于该轴上的位置；正值将它们移动到堆栈上方，负值将它们向下移动到堆栈中。
+默认情况下，定位的元素都具有z-index为auto，实际上为0。*/
+
+p:nth-of-type(1){
+  z-index: 1;
+}
+
+
+/*定位实训练习*/
+
+html {
+  font-family: sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+/*去掉body默认的外边距*/
+body {
+  margin: 0;
+}
+
+/*.info-box {
+  width: 450px;
+  height: 400px;
+  /*居中*/
+ /* margin: 0 auto;
+  }*/
+
+  .info-box {
+  width: 450px;
+  height: 400px;
+  position: fixed;
+  top: 0;
+}
+
+.info-box ul {
+  padding-left: 0;
+  margin-top: 0;
+}
+
+.info-box li {
+  float: left;
+  list-style-type: none;
+  width: 150px;
+}
+
+.info-box li a {
+  display: inline-block;
+  text-decoration: none;
+  width: 100%;
+  line-height: 3;
+  background-color: red;
+  color: black;
+  text-align: center;
+}
+
+.info-box li a:focus, .info-box li a:hover {
+  background-color: #a60000;
+  color: white;
+}
+
+.info-box li a.active {
+  background-color: #a60000;
+  color: white;
+}
+
+.info-box .panels {
+  height: 352px;
+  position: relative;
+  clear: both;
+}
+
+.info-box article {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 352px;
+  padding: 10px;
+  color: white;
+  background-color: #a60000;
+}
+
+.info-box .active-panel {
+  z-index: 1;
+}
+
+.fake-content {
+  background-color: #a60000;
+  color: white;
+  padding: 10px;
+  height: 2000px;
+  margin-left: 470px;
+}

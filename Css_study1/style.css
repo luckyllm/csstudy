@@ -1,0 +1,120 @@
+h1 {
+  color: red;
+}
+li {
+  list-style-type: square;
+}
+.special {
+  color: orange;
+  font-weight: bold;
+}
+li em {  /*em包含在li标签内，是li的子标签*/
+  color: rebeccapurple;
+}
+h1 + p {  /*h1和p是邻居，他们是同等的*/
+  font-size: 200%;
+}
+
+a:link {   /*未被访问颜色*/
+  color: pink;
+}
+
+a:visited {   /*已经访问颜色*/
+  color: green;
+}
+a:hover {  /* 鼠标悬停移除下划线*/
+  text-decoration: none;
+}
+body h1 + p .special {  /* 在<body>之内，紧接在<h1>后面的<p>元素的内部，类名为special。*/
+  color: yellow;
+  background-color: red;
+  padding: 5px;
+}
+
+.outer {
+  border: 5px solid black;
+}
+
+.box {
+  padding: 10px;
+  width: calc(90% - 30px);  /*calc()函数。这个函数允许您在CSS中进行简单的计算：要求此框的宽度为包含块宽度的90%，减去30像素*/
+  background-color: rebeccapurple;
+  color: white;
+}
+.box1 {
+  margin: 30px;
+  width: 100px;
+  height: 100px;
+  background-color: rebeccapurple;
+  transform: rotate(0.8turn)
+}
+body {
+  background-color: pink;
+}
+
+@media (min-width: 30em) { /* 该部分仅适用于视口大于30em的浏览器。如果浏览器的宽度大于30em，则背景色将为蓝色。*/
+  body {
+    background-color: pink;
+  }
+}
+
+.box2 {
+  border: 10px solid pink;
+  border-radius: 1em;
+  border-top-right-radius: 10% 30%;
+}
+
+.box3 {
+border:5px solid ;
+border-radius:10px;
+  background-image:url( balloons.jpg)
+
+
+}
+
+h2 {
+ color: #fff;
+background-color:#000;
+background:rgba(0,0,0,0.5)；/* 透明度*/
+  opacity: 0.5;/* 透明度*/
+ 
+}
+
+input[type="text"],
+input[type="email"] {
+  border: 2px solid #000;
+  margin: 0 0 1em 0;
+  padding: 10px;
+  width: 100%;
+}
+
+input[type="submit"] {
+  border: 3px solid #333;
+  background-color: #999;
+  border-radius: 5px;
+  padding: 10px 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+input[type="submit"]:hover {
+  background-color: #333;
+}
+
+button, 
+input, 
+select, 
+textarea { 
+  font-family : inherit;   /*在一些浏览器中，表单元素默认不会继承字体样式，因此如果你想要确保你的表单填入区域使用body中或者一个父元素中定义的字体，你需要向你的CSS中加入这条规则。*/
+  font-size : 100%; 
+} 
+
+button, 
+input, 
+select, 
+textarea {  
+  box-sizing: border-box;  /* box-sizing属性，在样式化表单时候，你可以使用这一知识，确保在给form元素设定宽度和高度时可以有统一的体验。*/
+  padding: 0;
+  margin: 0; 
+  overflow:auto;/*  你也应该在<textarea>上设置overflow: auto 以避免IE在不需要滚动条的时候显示滚动条：*/
+}

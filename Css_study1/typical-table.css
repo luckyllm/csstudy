@@ -1,0 +1,95 @@
+table {
+  table-layout: fixed;  /*通过 table-layout: fixed，您可以根据列标题的宽度来规定列的宽度，然后适当地处理它们的内容*/
+  width: 100%;
+  border-collapse: collapse;/*使用 border-collapse: collapse; ，让边框合为一条，*/
+  border: 3px solid purple;
+}
+/*选择了四个不同的标题(:nth-child)选择器
+（“选择第n个子元素，它是一个顺序排列的<th>元素，且其父元素是<thead>元素”）并给定了它们的百分比宽度。
+整个列宽度与列标题的宽度是一样的，这是一种很好的设定表列尺寸的方式。*/
+thead th:nth-child(1) {
+  width: 30%;
+}
+
+thead th:nth-child(2) {
+  width: 20%;
+}
+
+thead th:nth-child(3) {
+  width: 15%;
+}
+
+thead th:nth-child(4) {
+  width: 35%;
+}
+
+th, td {
+  padding: 20px;
+}
+
+/* typography */
+
+html {
+  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+}
+
+thead th, tfoot th {
+  font-family: 'Rock Salt', cursive;
+}
+
+th {
+  letter-spacing: 2px; /* letter-spacing 属性用于设置文本字符的间距表现。*/
+}
+
+td {
+  letter-spacing: 1px;
+}
+
+tbody td {
+  text-align: center;
+}
+
+tfoot th {
+  text-align: right;
+}
+
+thead, tfoot {
+  background: pink;
+  color: white;
+  text-shadow: 1px 1px 1px black;  /*text-shadow为文字添加阴影。可以为文字与  text-decorations  添加多个阴影，阴影值之间用逗号隔开。每个阴影值由元素在X和Y方向的偏移量、模糊半径和颜色值组成。*/
+}
+
+thead th, tfoot th, tfoot td {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
+  border: 3px solid purple;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #dda0dd;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #d8bfd8;
+}
+
+tbody {
+  background-image: url(../pictures/不知火壁纸.png);
+  opacity:0.5;
+  object-fit:cover;
+  /*object-fit属性可以在这里帮助你。当使用object-fit时，
+  替换元素可以以多种方式被调整到合乎盒子的大小。（cover\contain\fill）*/
+}
+
+table {
+  background-color: #ff33cc;
+}
+
+caption {
+  font-family: 'Rock Salt', cursive;
+  padding: 20px;
+  font-style: italic;
+  caption-side: bottom;
+  color: #666;
+  text-align: right;
+  letter-spacing: 1px;
+}

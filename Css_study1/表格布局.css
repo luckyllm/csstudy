@@ -1,0 +1,35 @@
+html {
+  font-family: sans-serif;
+}
+
+form {
+  display: table;
+  margin: 0 auto;
+}
+
+form div {
+  display: table-row;/*These elements behave like <tr> HTML elements*/
+}
+
+form label, form input {
+  display: table-cell;/*These elements behave like <td> HTML elements.*/
+  margin-bottom: 10px;
+}
+
+form label {
+  width: 200px;
+  padding-right: 5%;
+  text-align: right;
+}
+
+form input {
+  width: 300px;
+}
+
+form p {
+  display: table-caption;/*格式和表格中的caption一样*/
+  caption-side: bottom;/*标题在表格的底部*/
+  width: 300px;
+  color: #999;
+  font-style: italic;
+}

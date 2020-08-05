@@ -1,0 +1,95 @@
+/*.box {
+    float: left;
+    width: 150px;
+    height: 150px;
+    margin-right: 30px;
+}
+
+body {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+p {
+  line-height: 2;
+  word-spacing: 0.1rem;
+}
+
+/*img {
+  float: left;
+  margin-right: 30px;
+}*/
+
+/*img {
+  float: right;
+  margin-left: : 30px;
+}
+首字下沉
+p {
+  width: 400px;
+  margin: 0 auto;
+}*/
+/*
+p::first-line {
+  text-transform: uppercase;
+}
+
+p::first-letter {
+  font-size: 3em;
+  border: 1px solid black;
+  background: red;
+  float: left;
+  padding: 2px;
+  margin-right: 4px;
+}*/
+
+
+/*多列浮动布局*/
+
+/*两列布局*/
+
+/*box-sizing 通过更改盒模型来拯救我们，盒子的宽度取值为 content + padding + border，
+而不仅是之前的content——所以当增加内边距或边界的宽度时，不会使盒子更宽——而是会使内容调整得更窄。*/
+* {
+  box-sizing: border-box;
+}
+body {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+div:nth-of-type(1) {
+  width: 36%;
+  float: left;
+}
+
+div:nth-of-type(2) {
+  width: 30%;
+  float: left;
+  margin-left: 4%;
+}
+
+div:nth-of-type(3) {
+  width: 26%;
+  float: right;
+}
+
+footer {
+  clear: both;/*clear 可以取三个值：left\right\both*/
+  margin-top: 14%;
+}
+
+div, footer {
+  padding: 1%;
+  border: 2px solid black;
+  background-color: red;
+}
+
+/*如果您没有一个可用的元素来清除您的浮动(比如我们的页脚)，
+在您想要清除的浮动之后添加一个看不见的“clearfix div”是非常有用的，但是在这里页脚也要用到。
+接下来我们要做的是，移除页脚样式规则中的 clear: both; 声明，取而代之将其放在clearfix div中：*/
+.clearfix {
+  clear: both;
+}

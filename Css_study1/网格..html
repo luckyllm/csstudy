@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Simple grid</title>
+    <style>
+    * {
+        box-sizing: border-box;
+    }
+
+
+    body {
+        width: 980px;
+        margin: 0 auto;
+    }
+
+    .wrapper {
+        padding-right: 20px;
+    }
+
+    .row {
+        /*此清除意味着我们不需要应用构成完整十二列的元素去填充每一行。行将保持分离，并且彼此不干扰。*/
+       /* clear: both;*/
+
+       display:flex;
+    }
+
+    .col {
+        float: left;
+        margin-left: 20px;
+         margin-bottom: 1em;
+        width: 60px;
+        background: rgb(255, 150, 150);
+    }
+
+    /* Two column widths (120px) plus one gutter width (20px) */
+    .col.span2 {
+        width: 140px;
+    }
+
+    /* Three column widths (180px) plus two gutter widths (40px) */
+    .col.span3 {
+        width: 220px;
+    }
+
+    /* And so on... */
+    .col.span4 {
+        width: 300px;
+    }
+
+    .col.span5 {
+        width: 380px;
+    }
+
+    .col.span6 {
+        width: 460px;
+    }
+
+    .col.span7 {
+        width: 540px;
+    }
+
+    .col.span8 {
+        width: 620px;
+    }
+
+    .col.span9 {
+        width: 700px;
+    }
+
+    .col.span10 {
+        width: 780px;
+    }
+
+    .col.span11 {
+        width: 860px;
+    }
+
+    .col.span12 {
+        width: 940px;
+    }
+
+    /*创建流体网格
+
+我们的网格工作得很好，但它有一个固定的宽度。我们真的想要一个灵活（流体）网格，它将随着浏览器视口中的可用空间而增长和缩小。为了实现这一点，我们可以使用参考像素宽度并将其转换为百分比
+target(目标的宽度) / context(上下文) = result(百分比)
+*/
+
+    body {
+        width: 90%;
+        max-width: 980px;
+        margin: 0 auto;
+    }
+
+    .wrapper {
+        padding-right: 2.08333333%;
+    }
+
+    .col {
+        float: left;
+        margin-left: 2.08333333%;
+        width: 6.25%;
+        flex:1 1 auto;
+        background: rgb(255, 150, 150);
+        
+    }
+
+    /* Two column widths (12.5%) plus one gutter width (2.08333333%) */
+    .col.span2 {
+        width: 14.58333333%;
+    }
+
+    /* Three column widths (18.75%) plus two gutter widths (4.1666666) */
+    .col.span3 {
+        width: 22.91666666%;
+    }
+
+    /* And so on... */
+    .col.span4 {
+        width: 31.24999999%;
+    }
+
+    .col.span5 {
+        width: 39.58333332%;
+    }
+
+    .col.span6 {
+        width: 47.91666665%;
+    }
+
+    .col.span7 {
+        width: 56.24999998%;
+    }
+
+    .col.span8 {
+        width: 64.58333331%;
+    }
+
+    .col.span9 {
+        width: 72.91666664%;
+    }
+
+    .col.span10 {
+        width: 81.24999997%;
+    }
+
+    .col.span11 {
+        width: 89.5833333%;
+    }
+
+    .col.span12 {
+        width: 97.91666663%;
+    }
+
+    /*clac:*/
+
+    .col.span2 {
+        width: calc((6.25%*2) + 2.08333333%);
+    }
+
+    .col.span3 {
+        width: calc((6.25%*3) + (2.08333333%*2));
+    }
+
+    .col.span4 {
+        width: calc((6.25%*4) + (2.08333333%*3));
+    }
+
+    .col.span5 {
+        width: calc((6.25%*5) + (2.08333333%*4));
+    }
+
+    .col.span6 {
+        width: calc((6.25%*6) + (2.08333333%*5));
+    }
+
+    .col.span7 {
+        width: calc((6.25%*7) + (2.08333333%*6));
+    }
+
+    .col.span8 {
+        width: calc((6.25%*8) + (2.08333333%*7));
+    }
+
+    .col.span9 {
+        width: calc((6.25%*9) + (2.08333333%*8));
+    }
+
+    .col.span10 {
+        width: calc((6.25%*10) + (2.08333333%*9));
+    }
+
+    .col.span11 {
+        width: calc((6.25%*11) + (2.08333333%*10));
+    }
+
+    .col.span12 {
+        width: calc((6.25%*12) + (2.08333333%*11));
+    }
+
+/*它将容器元素偏移一列宽度。*/
+    .offset-by-one {
+  margin-left: calc(6.25% + (2.08333333%*2));
+}
+
+
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="row">
+            <div class="col">1</div>
+            <div class="col">2</div>
+            <div class="col">3</div>
+            <div class="col">4</div>
+            <div class="col">5</div>
+            <div class="col">6</div>
+            <div class="col">7</div>
+            <div class="col">8</div>
+            <div class="col">9</div>
+            <div class="col">10</div>
+            <div class="col">11</div>
+            <div class="col">12</div>
+        </div>
+        <div class="row">
+            <div class="col span1">13</div>
+            <div class="col span5 offset-by-one">14</div>
+            <div class="col span3">15</div>
+            
+        </div>
+       
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+/*我们需要选择将哪些元素将设置为柔性的盒子。
+我们需要给这些 flexible 元素的父元素 display 设置一个特定值。
+在本例中，我们想要设置 <article> 元素，
+因此我们给 <section>（变成了 flex 容器）设置 display：*/
+
+section {
+  display:flex;
+}
+
+
+/*弹性盒子提供了 flex-direction 这样一个属性，
+它可以指定主轴的方向（弹性盒子子类放置的地方）— 它默认值是 row，
+这使得它们在按你浏览器的默认语言方向排成一排（在英语/中文浏览器中是从左到右）。
+*/
+
+section {
+
+  display:flex;
+  /*flex-direction: column;/*设置为列布局*/
+  /*flex-direction:row-reverse;顺序相反的行布局*/
+/*  flex-direction；顺序相反的列布局*/
+flex-wrap: wrap;
+
+/*这是一个无单位的比例值，表示每个 flex 项沿主轴的可用空间大小。
+本例中，我们设置 <article> 元素的 flex 值为 1，这表示每个元素占用空间都是相等的，
+占用的空间是在设置 padding 和 margin 之后剩余的空间。
+因为它是一个比例，这意味着将每个 flex 项的设置为 400000 的效果和 1 的时候是完全一样的。*/
+
+flex: 1;
+
+}
+
+article {
+flex: 200px;
+}
+
+article:nth-of-type(3) {
+  flex: 2;/*第三个占位宽是前面的一半*/
+}
+
+article {
+  flex: 1 200px;
+}
+
+article:nth-of-type(3) {
+  flex: 2 200px;
+}

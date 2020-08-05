@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="表格布局.css">
+</head>
+<body>
+	<form>
+  <p>First of all, tell us your name and age.</p>
+  <div>
+    <label for="fname">First name:</label>
+    <input type="text" id="fname">
+  </div>
+  <div>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname">
+  </div>
+  <div>
+    <label for="age">Age:</label>
+    <input type="text" id="age">
+  </div>
+</form>
+</body>
+</html>
+
+
+   /* 水平和垂直对齐*/
+    html {
+        font-family: sans-serif;
+    }
+
+    body {
+        width: 70%;
+        max-width: 960px;
+        margin: 20px auto;
+    }
+
+    button {
+        font-size: 18px;
+        line-height: 1.5;
+        width: 15%;
+    }
+
+    div {
+        height: 100px;
+        border: 1px solid black;
+    }
+
+    /* Add your flexbox CSS below here */
+
+    div {
+        display: flex;
+        align-items: center;
+        /*align-items 控制 flex 项在交叉轴上的位置。*/
+        justify-content: space-between;
+        /*控制 flex 项在主轴上的位置。(flex-start/flex-end/space-betweenspace-around )后两个作用相似*/
+    }
+
+    /*你可以用 align-self 属性覆盖 align-items 的行为。*/
+    /*button:first-child {
+        align-self: flex-end;
+        
+    }*/
+
+   /* 你会看到 "Smile" 按钮移动到了主轴的末尾
+   所有 flex 项默认的 order 值是 0
+   order 值大的 flex 项比 order 值小的在显示顺序中更靠后。*/
+    button:first-child {
+        order: 1;
+    }
+
+    /*flex 嵌套*/
+
+     html {
+        font-family: sans-serif;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      header {
+        background: purple;
+        height: 100px;
+      }
+
+      h1 {
+        text-align: center;
+        color: white;
+        line-height: 100px;
+        margin: 0;
+      }
+
+      article {
+        padding: 10px;
+        margin: 10px;
+        background: aqua;
+      }
+
+      /* Add your flexbox CSS below here */
+
+      section {
+        display: flex;
+      }
+
+      article {
+        flex: 1 200px;
+      }
+
+      article:nth-of-type(3) {
+        flex: 3 200px;
+        display: flex;
+        flex-flow: column;
+      }
+
+      article:nth-of-type(3) div:first-child {
+        flex: 1 100px;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+      button {
+        flex: 1 auto;
+        margin: 5px;
+        font-size: 18px;
+        line-height: 1.5;
+      }
